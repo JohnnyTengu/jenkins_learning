@@ -4,7 +4,7 @@ pipeline {
     stage('print hosts list') {
         steps {
           script {
-            def browsers = env.HOSTS
+            def browsers = System.getenv(HOSTS)
             echo "${browsers[i]}"
 
         }
