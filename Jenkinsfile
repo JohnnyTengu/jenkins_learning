@@ -10,12 +10,8 @@ pipeline {
         }
         stage('string to array') {
             steps {
-                sh '''
-                array=($HOSTS)
-                echo "{$array[@]}"
-
-
-                '''
+                sh 'array=($HOSTS)'
+                sh 'echo "{$array[@]}"'
 
             }
         }
