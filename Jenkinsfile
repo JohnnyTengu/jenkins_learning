@@ -8,14 +8,18 @@ pipeline {
                 sh 'echo $HOSTS'
             }
         }
-@NonCPS // has to be NonCPS or the build breaks on the call to .each
-def echo_all(list) {
-    list.each { item ->
-        echo "Hello ${item}"
-    }
 }
         stage('string to array') {
             steps {
+                script {
+//                    def listCatalog = sh script: "ls src/examplecatalog", returnStdout: true
+                    def listCatalog = $HOSTS
+                    def arrayExample=[]
+                    listCatalog.split().each {
+                    arrayExample << it
+            }
+            echo "${arrayExample}"
+                }
                 sh 'array=$HOSTS'
                 sh 'echo "{$array[@]}"'
 
