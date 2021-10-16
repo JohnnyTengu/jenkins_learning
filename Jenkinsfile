@@ -19,8 +19,8 @@ pipeline {
             }
             echo "${arrayExample}"
                 }
-                sh 'array=$HOSTS'
-                sh 'echo "{$array[@]}"'
+//                sh 'array=$HOSTS'
+//                sh 'echo "{$array[@]}"'
 
             }
         }
