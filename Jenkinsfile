@@ -1,2 +1,2 @@
 #!/bin/bash
-ping yandex.ru
+ping yandex.ru -c 4
