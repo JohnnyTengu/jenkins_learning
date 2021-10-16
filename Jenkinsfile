@@ -8,9 +8,15 @@ pipeline {
                 sh 'echo $HOSTS'
             }
         }
-        stage('Ping host list') {
+        stage('string to array') {
             steps {
-                sh 'echo "step 2"'
+                def listOfHosts = $HOSTS
+                def hostsArray=[]
+                listOfHosts.split().each {
+                    hostsArray << it
+                }
+                print hostsArray
+//                sh ''' for i in $HOSTS
 
             }
         }
