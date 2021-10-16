@@ -12,8 +12,11 @@ pipeline {
             steps {
                 sh '''
                 #!/bin/bash
-                declare -a list=$HOSTS
-                echo $list
+                myvar="string1 string2 string3 8.8.8.8 google.com test.test 123.321"
+                # Redefine myvar to myarray using parenthesis
+                myarray=($myvar)
+
+                echo $myarray
                 '''
 
             }
