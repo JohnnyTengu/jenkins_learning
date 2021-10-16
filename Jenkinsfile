@@ -14,7 +14,7 @@ pipeline {
                 #!/bin/bash
                 myvar="string1 string2 string3 8.8.8.8 google.com test.test 123.321"
                 # Redefine myvar to myarray using parenthesis
-                myarray=($myvar)
+                myarray=$myvar
 
                 echo $myarray
                 '''
