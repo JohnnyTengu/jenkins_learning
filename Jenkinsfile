@@ -3,10 +3,9 @@ pipeline {
     stages {
         stage('print hosts list') {
             steps {
-                params.HOSTS
-//                sh '''#!/bin/bash
-//                        ./ping_addr.sh
-//                '''
+//                params.HOSTS
+                sh 'echo "Print hosts list"'
+                sh 'echo $params.HOSTS'
             }
         }
     }
