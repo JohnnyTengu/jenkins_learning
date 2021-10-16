@@ -11,6 +11,7 @@ pipeline {
         stage('string to array') {
             steps {
                 sh '''
+                #!/bin/bash
                 declare -a list=$HOSTS
                 echo $list
                 '''
