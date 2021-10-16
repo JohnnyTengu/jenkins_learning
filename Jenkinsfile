@@ -1,20 +1,9 @@
-pipeline { 
-    agent any 
-    }
+pipeline {
+    agent { docker { image 'maven:3.3.3' } }
     stages {
-        stage('Wait') { 
-            steps { 
-                sh 'echo "wait"' 
-            }
-        }
-        stage('Test'){
+        stage('build') {
             steps {
-                sh 'ping $WHAT_PING -c 4'
-            }
-        }
-        stage('Deploy') {
-            steps {
-                sh 'echo "Deploy"'
+                sh 'mvn --version'
             }
         }
     }
