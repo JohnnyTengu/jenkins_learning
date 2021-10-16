@@ -12,8 +12,8 @@ pipeline {
             steps {
             echo "run script"
                 script {
-                def hosts = $HOSTS
-                print hosts
+                def myVar = build.getEnvironment(listener).get('HOSTS')
+                print myVar
                 }
 
 //                sh '''
