@@ -4,7 +4,7 @@ pipeline {
         stage('ping') {
             steps {
                 sh '''#!/bin/bash
-                        echo "Hello World"
+                        ./ping_addr.sh"
                 '''
             }
         }
