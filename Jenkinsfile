@@ -18,7 +18,7 @@ pipeline {
         stage('ping') {
             steps {
                 sh '''#!/bin/bash
-                        ./ping.sh
+                        ./run_ping/ping.sh
                 '''
             }
         }
