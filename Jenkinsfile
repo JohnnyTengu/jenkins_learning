@@ -6,7 +6,7 @@ pipeline {
           script {
             def browsers = $HOSTS
             echo "${browsers[i]}"
-          }
+
         }
     }
   }
