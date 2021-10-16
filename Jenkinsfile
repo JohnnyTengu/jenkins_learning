@@ -1,21 +1,40 @@
 pipeline {
     agent any 
     stages {
-        stage('Wait...') { 
+        stage('Build') { 
             steps {
-              bash '''
-              #!/bin/bash
-              echo "Waiting"
-              ```
+                // 
             }
         }
-        stage('Ping') { 
+        stage('Test') { 
             steps {
-              bash '''
-              ping $WHAT_PING -c 4
-              '''
-              
                 // 
+            }
+        }
+        stage('Deploy') { 
+            steps {
+                // 
+            }
+        }
+    }
+}
+pipeline { 
+    agent any 
+    }
+    stages {
+        stage('Wait') { 
+            steps { 
+                sh 'echo "wait"' 
+            }
+        }
+        stage('Test'){
+            steps {
+                sh 'ping $WHAT_PING -c 4'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                sh 'echo "Deploy"'
             }
         }
     }
