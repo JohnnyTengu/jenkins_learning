@@ -16,7 +16,7 @@ pipeline {
                 # Redefine myvar to myarray using parenthesis
                 myarray=$myvar
 
-                echo $myarray
+                echo $myarray[1]
                 '''
 
             }
