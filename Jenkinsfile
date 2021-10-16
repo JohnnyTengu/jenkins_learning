@@ -10,7 +10,7 @@ pipeline {
         }
         stage('string to array') {
             steps {
-            sh 'python --version
+            sh 'python --version'
             }
         }
     }
