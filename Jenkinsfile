@@ -1,0 +1,1 @@
+ping yandex.ru
