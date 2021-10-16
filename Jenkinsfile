@@ -1,17 +1,14 @@
 pipeline {
-    agent any
-    stages {
-        stage('print hosts list') {
-            steps {
-//                params.HOSTS
-                sh 'echo "Print hosts list"'
-                sh 'echo $HOSTS'
-            }
-        }
-        stage('string to array') {
-            steps {
-                sh 'python3 --version'
-            }
+  agent any
+  stages {
+    stage('print hosts list') {
+        steps {
+          script {
+            def browsers = ['chrome', 'firefox']
+            for (int i = 0; i < browsers.size(); ++i) {
+            echo "Testing the ${browsers[i]} browser"
+          }
         }
     }
+  }
 }
