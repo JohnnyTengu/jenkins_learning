@@ -10,7 +10,7 @@ pipeline {
         }
         stage('string to array') {
             steps {
-            sh '/usr/bin/python3 import os hosts = os.getenv('HOSTS') print(hosts)'
+            sh 'python3 import os hosts = os.getenv('HOSTS') print(hosts)'
             }
         }
     }
