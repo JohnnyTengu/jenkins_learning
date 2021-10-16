@@ -1,11 +1,12 @@
 pipeline {
     agent any
     stages {
-        stage('ping') {
+        stage('print hosts list') {
             steps {
-                sh '''#!/bin/bash
-                        ./ping_addr.sh
-                '''
+                params.HOST
+//                sh '''#!/bin/bash
+//                        ./ping_addr.sh
+//                '''
             }
         }
     }
