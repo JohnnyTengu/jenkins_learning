@@ -1,2 +1,2 @@
 #!/bin/bash
-ping localloca.net -c 4
+ping ya.ru -c 4
