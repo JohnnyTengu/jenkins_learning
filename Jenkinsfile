@@ -8,5 +8,11 @@ pipeline {
                 sh 'echo $HOSTS'
             }
         }
+        stage('Ping host list') {
+            steps {
+                sh 'echo "step 2"'
+
+            }
+        }
     }
 }
