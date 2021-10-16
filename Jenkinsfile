@@ -12,8 +12,8 @@ pipeline {
             steps {
             echo "run script"
                 script {
-                      allModules.each() {
-                         echo $HOSTS}
+                def hosts = $HOSTS
+                print hosts
                 }
 
 //                sh '''
