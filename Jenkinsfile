@@ -8,7 +8,6 @@ pipeline {
                 sh 'echo $HOSTS'
             }
         }
-}
         stage('string to array') {
             steps {
                 script {
@@ -26,4 +25,4 @@ pipeline {
             }
         }
     }
-
+}
