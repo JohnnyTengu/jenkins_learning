@@ -1,3 +1,8 @@
+        def listOfHosts = $HOSTS
+        def hostsArray=[]
+        listOfHosts.split().each {
+        hostsArray << it
+        }
 pipeline {
     agent any
     stages {
@@ -7,11 +12,6 @@ pipeline {
                 sh 'echo "Print hosts list"'
                 sh 'echo $HOSTS'
             }
-        }
-        def listOfHosts = $HOSTS
-        def hostsArray=[]
-        listOfHosts.split().each {
-        hostsArray << it
         }
         stage('string to array') {
             steps {
