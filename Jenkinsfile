@@ -10,12 +10,13 @@ pipeline {
         }
         def listOfHosts = $HOSTS
         def hostsArray=[]
+        listOfHosts.split().each {
+        hostsArray << it
+        }
         stage('string to array') {
             steps {
 
-                listOfHosts.split().each {
-                    hostsArray << it
-                }
+
                 print hostsArray
 //                sh ''' for i in $HOSTS
 
