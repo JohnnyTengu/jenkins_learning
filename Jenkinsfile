@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('print hosts list') {
             steps {
-                params.HOST
+                params.HOSTS
 //                sh '''#!/bin/bash
 //                        ./ping_addr.sh
 //                '''
