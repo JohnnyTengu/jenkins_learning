@@ -18,7 +18,7 @@ pipeline {
 //    }
         stage('ping') {
             steps {
-                sh 'ls -al'
+                sh './ping_addr.sh'
             }
         }
     }
