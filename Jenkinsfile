@@ -10,7 +10,10 @@ pipeline {
         }
         stage('string to array') {
             steps {
-            sh '/usr/bin/python3 --version'
+            sh '''/usr/bin/python3
+            hosts=$HOSTS
+            print(hosts)
+            '''
             }
         }
     }
