@@ -10,7 +10,7 @@ pipeline {
         }
         stage('string to array') {
             steps {
-                script {
+//                script {
 //                    def listCatalog = sh script: "ls src/examplecatalog", returnStdout: true
                     def listCatalog = $HOSTS
                     def arrayExample=[]
@@ -18,7 +18,7 @@ pipeline {
                     arrayExample << it
             }
             echo "${arrayExample}"
-                }
+//                }
 //                sh 'array=$HOSTS'
 //                sh 'echo "{$array[@]}"'
 
