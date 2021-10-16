@@ -11,11 +11,8 @@ pipeline {
         stage('string to array') {
             steps {
                 sh '''
-                arr=($HOSTS)
-                for i in arr
-                do
-                  echo "$i"
-                done
+                array=($HOSTS)
+                echo "{$array[@]}"
 
 
                 '''
