@@ -14,8 +14,7 @@ pipeline {
                 #!/bin/bash
                 myvar="string1 string2 string3 8.8.8.8 google.com test.test 123.321"
                 myarray=$myvar
-
-                echo ${#myarray[1]}
+                echo "My array: ${myarray[@]}"
                 '''
 
             }
