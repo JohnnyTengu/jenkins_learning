@@ -5,7 +5,7 @@ pipeline {
             steps {
 //                params.HOSTS
                 sh 'echo "Print hosts list"'
-                sh 'echo $params.HOSTS'
+                sh 'echo $HOSTS'
             }
         }
     }
