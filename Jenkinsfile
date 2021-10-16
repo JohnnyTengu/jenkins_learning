@@ -8,10 +8,11 @@ pipeline {
                 sh 'echo $HOSTS'
             }
         }
+        def listOfHosts = $HOSTS
+        def hostsArray=[]
         stage('string to array') {
             steps {
-                def listOfHosts = $HOSTS
-                def hostsArray=[]
+
                 listOfHosts.split().each {
                     hostsArray << it
                 }
