@@ -4,7 +4,7 @@ pipeline {
         stage('ping') {
             steps {
                 sh '''#!/bin/bash
-                        ./ping_addr.sh"
+                        ./ping_addr.sh
                 '''
             }
         }
