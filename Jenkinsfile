@@ -1,21 +1,18 @@
 pipeline {
     agent any
     stages {
-            stage('Checkout') {
-      steps {
-        script {
-           // The below will clone your repo and will be checked out to master branch by default.
-           git credentialsId: 'f52a146e-fa29-424c-9d5a-ddae64f7343e', url: 'git@github.com:JohnnyTengu/run_ping.git'
-           // Do a ls -lart to view all the files are cloned. It will be clonned. This is just for you to be sure about it.
-//           sh "ls -lart ./*"
-           // List all branches in your repo.
-//           sh "git branch -a"
-           sh "git pull"
-           // Checkout to a specific branch in your repo.
-//           sh "git checkout master"
-          }
-       }
-    }
+stage('Checkout') {
+ // Get CalibrationResults from GitHub
+ checkout([
+            $class: 'GitSCM',
+            branches: [[name: 'refs/heads/master']],
+            doGenerateSubmoduleConfigurations: false,
+            extensions: [[$class: 'RelativeTargetDirectory', relativeTargetDir: 'CalibrationResults']],
+            submoduleCfg: [],
+            userRemoteConfigs: [[credentialsId: 'f52a146e-fa29-424c-9d5a-ddae64f7343e', url: 'git@github.com:JohnnyTengu/run_ping.git']]
+        ])
+ // Get Combination from GitHub
+}
         stage('ping') {
             steps {
                 sh 'ls -al'
