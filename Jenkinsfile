@@ -11,7 +11,8 @@ pipeline {
         stage('string to array') {
             steps {
             sh '''/usr/bin/python3
-            hosts=$HOSTS
+            import os
+            hosts = os.getenv('HOSTS')
             print(hosts)
             '''
             }
