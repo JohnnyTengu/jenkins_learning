@@ -10,9 +10,10 @@ pipeline {
         }
         stage('string to array') {
             steps {
+            echo "run script"
                 script {
                       allModules.each() {
-                         echo $HOSTS
+                         echo $HOSTS}
                 }
 
 //                sh '''
