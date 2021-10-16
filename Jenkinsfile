@@ -5,7 +5,7 @@ pipeline {
       steps {
         script {
            // The below will clone your repo and will be checked out to master branch by default.
-           git credentialsId: 'johnny-tengu', url: 'https://github.com/JohnnyTengu/run_ping.git'
+           git credentialsId: 'johnny-tengu', url: 'git@github.com:JohnnyTengu/run_ping.git'
            // Do a ls -lart to view all the files are cloned. It will be clonned. This is just for you to be sure about it.
            sh "ls -lart ./*"
            // List all branches in your repo.
