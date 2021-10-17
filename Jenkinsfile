@@ -11,7 +11,10 @@ pipeline {
     }
     stage('run_ping_credentials') {
       steps {
-        build job: 'PING', parameters: [string(name: 'WHAT_PING', value: String.valueOf(CREDSECRET))]
+        withCredentials([string(credentialsId: 'test_cred', variable: 'test')]) {
+    // some block
+}
+        build job: 'PING', parameters: [string(name: 'WHAT_PING', value: String.valueOf(test))]
       }
     }
   }
