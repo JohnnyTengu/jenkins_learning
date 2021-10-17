@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('ping') {
             steps {
-                sh './ping.sh'
+                sh 'ls -al'
             }
         }
     }
