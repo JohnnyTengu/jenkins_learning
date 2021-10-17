@@ -12,6 +12,7 @@ node {
               ]
         }
     }
+
     stage('run_ping_credentials') {
         withCredentials([string(credentialsId: 'DOMAIN', variable: 'secrets')]) {
         build job: 'PING', parameters: [string(name: 'WHAT_PING', value: String.valueOf(secrets))]
