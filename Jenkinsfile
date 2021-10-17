@@ -22,7 +22,8 @@ pipeline {
           build job: 'CalledPipeline', parameters: [
               string(name: 'myParam', value: JsonOutput.toJson( i ) )
               ]
-}
+        }
+      }
     stage('run_ping_credentials') {
       steps {
         withCredentials([string(credentialsId: 'DOMAIN', variable: 'secrets')]) {
