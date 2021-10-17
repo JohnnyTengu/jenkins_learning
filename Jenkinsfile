@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('clone repository') {
       steps {
-        sh 'cd ../ && ls -al'
+        sh 'ls -al'
       }
     }
   }
