@@ -4,6 +4,7 @@ pipeline {
         stage('ping') {
             steps {
                 sh 'ls -al'
+                sh 'pwd'
             }
         }
     }
