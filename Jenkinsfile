@@ -8,7 +8,7 @@ node {
         for (i in arr) {
           println "now got ${i}"
           build job: 'PING', parameters: [
-              string(name: 'WHAT_PING', value: JsonOutput.toJson( i ) )
+              string(name: 'WHAT_PING', value: String.valueOf( i ) )
               ]
 }
 
