@@ -11,7 +11,7 @@ pipeline {
     }
     stage('run_ping_credentials') {
       steps {
-        build job: 'PING', parameters: [string(name: 'WHAT_PING', value: '$SECRET_HOST')]
+        build job: 'PING', parameters: [string(name: 'WHAT_PING', value: String.valueOf(CREDSECRET))]
       }
     }
   }
