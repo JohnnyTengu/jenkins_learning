@@ -14,7 +14,7 @@ pipeline {
     }
     stage('run_ping') {
       steps {
-        sh 'echo WHAT_PING'
+        sh 'echo $WHAT_PING'
         sh './ping.sh'
       }
     }
