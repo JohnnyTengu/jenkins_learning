@@ -9,10 +9,10 @@ pipeline {
         //sh './ping.sh'
       }
     }
-//    stage('run_ping_credentials') {
-//      steps {
-//        build job: 'PING', parameters: [string(name: 'WHAT_PING', value: '$SECRET_HOST')]
-//      }
-//    }
+    stage('run_ping_credentials') {
+      steps {
+        build job: 'PING', parameters: [string(name: 'WHAT_PING', value: '$SECRET_HOST')]
+      }
+    }
   }
 }
