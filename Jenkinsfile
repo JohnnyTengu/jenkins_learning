@@ -19,8 +19,8 @@ pipeline {
         def arr = full_string.split(" ")
         for (i in arr) {
           println "now got ${i}"
-          build job: 'CalledPipeline', parameters: [
-              string(name: 'myParam', value: JsonOutput.toJson( i ) )
+          build job: 'PING', parameters: [
+              string(name: 'WHAT_PING', value: JsonOutput.toJson( i ) )
               ]
         }
       }
