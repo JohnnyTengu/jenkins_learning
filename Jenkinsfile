@@ -13,8 +13,9 @@ pipeline {
       steps {
         withCredentials([string(credentialsId: 'DOMAIN', variable: 'secrets')]) {
     // some block
-}
+
         build job: 'PING', parameters: [string(name: 'WHAT_PING', value: String.valueOf(secrets))]
+        }
       }
     }
   }
