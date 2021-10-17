@@ -4,7 +4,7 @@ pipeline {
     stage('run_ping_job') {
       steps {
         sh 'echo $HOSTS'
-        build job: 'PING', parameters: [string(name: 'WHAT_PING', value: String.valueof(HOSTS))]
+        build job: 'PING', parameters: [string(name: 'WHAT_PING', value: String.valueOf(HOSTS))]
         //sh 'echo $WHAT_PING'
         //sh './ping.sh'
       }
