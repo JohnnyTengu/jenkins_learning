@@ -6,6 +6,7 @@ node {
         def full_string = String.valueOf(HOSTS)
         def arr = full_string.split(" ")
         for (i in arr) {
+          println i
           build job: 'PING', parameters: [
               string(name: 'WHAT_PING', value: String.valueOf( i ) )
               ]
